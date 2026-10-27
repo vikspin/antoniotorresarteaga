@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vikspin.github.io/antoniotorresarteaga/sitemap.xml
+Sitemap: https://ata.mx/sitemap.xml
