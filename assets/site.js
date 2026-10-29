@@ -37,9 +37,9 @@
       box.querySelector('.n').textContent=j.total;
       if(j.url){box.querySelectorAll('[data-gurl]').forEach(function(a){a.href=a.hasAttribute('data-write')&&j.writeUrl?j.writeUrl:j.url})}
       box.classList.add('on');
-      var list=document.getElementById('quotes');
+      var list=document.getElementById('quotes'), n=0;
       (j.reviews||[]).forEach(function(r){
-        if(!r.text)return;
+        if(!r.text)return; n++;
         var q=document.createElement('blockquote');q.className='quote';
         var p=document.createElement('p');p.textContent='“'+r.text+'”';q.appendChild(p);
         var ft=document.createElement('footer');
@@ -48,7 +48,7 @@
         ft.appendChild(a);var s=document.createElement('span');s.className='stars';s.textContent=stars(r.rating);ft.appendChild(s);
         if(r.when){var w=document.createElement('span');w.textContent=r.when;ft.appendChild(w)}
         q.appendChild(ft);list.appendChild(q)});
-      document.getElementById('g-attr').hidden=false;
+      document.getElementById('g-attr').hidden=!n;
       var sec=document.getElementById('opiniones');if(sec)sec.hidden=false;
     }).catch(function(){});
   }
